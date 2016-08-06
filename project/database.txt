@@ -1,0 +1,151 @@
+drop database performance;
+create database performance;
+use performance;
+
+create table login(
+	username varchar(40) not null primary key,
+	password varchar(20) not null,
+	type varchar(10) not null
+);
+
+insert into login values('lakshitha','namikaze','admin');
+insert into login values('e/12/058','1234','student');
+insert into login values('dr.janaka','1234','staff');
+insert into login values('hasitha','1234','outsider');
+insert into login values('dhanika','1234','admin');
+insert into login values('ruchira','1234','student');
+insert into login values('pavinaa','1234','student');
+insert into login values('dr.ragel','1234','staff');
+insert into login values('e/12/410','1234','student');
+insert into login values('e/12/185','1234','student');
+insert into login values('e/13/250','1234','student');
+insert into login values('e/12/057','1234','student');
+insert into login values('e/12/411','1234','student');
+insert into login values('e/13/009','1234','student');
+insert into login values('e/13/050','1234','student');
+insert into login values('e/12/277','1234','student');
+insert into login values('e/12/211','1234','student');
+
+create table outsiders(
+	username varchar(40) not null primary key,
+	password varchar(20) not null,
+	fname varchar(20),
+	lname varchar(20),
+	company varchar(30) not null,
+	position varchar(20),
+	address text,
+	mobile varchar(15),
+	email varchar(30)
+);
+
+insert into outsiders(username,password,fname,lname,company,position,address,mobile,email) 
+values('hasitha','abcd','Hasitha','Weerasoriya','MIT','Director','Colombo 06','0770322232','hasitha345@gmail.com'),
+      ('malaka','1234','Malaka','Silva','Virtusa','CEO','Marudhana','0112345678','malaka45@yahoo.com'),
+      ('nimal','efgh','Nimal','Wanigasinghe','DirectFN','Managing Director','Nugegoda','0119876543','Nimalwnai@gmail.com'),
+      ('janitha','5678','Janitha','Perera','WSO2','CEO','Katubedda','0112235678','jani234@yahoo.com'),
+      ('vimal','ijkl','Vimal','Dissanayake','Ex99','Admistrator','Moratuwa','0112223334','vimdis@gmail.com');
+
+create table student(
+	username varchar(40) not null,
+	ave_gpa double,
+	totalcredit double,
+	totalcumilative double,
+	repeated boolean,
+	primary key(username)
+);
+
+insert into student(username,ave_gpa,totalcredit,totalcumilative,repeated)
+values('e/12/057','3.2','18','0','1'),
+      ('e/12/185','3.5','18','0','0'),
+      ('e/13/250','3.2','18','0','0'),
+      ('e/12/410','3.4','18','0','0'),
+      ('e/12/411','2.7','15','3','1'),
+      ('e/12/277','2.6','12','6','1'),
+      ('e/12/211','3.7','18','0','0'),
+      ('e/13/009','3.8','18','0','0'),
+      ('e/13/050','3.6','18','0','0');
+
+
+
+
+create table courses(
+	course_id varchar(8) not null,
+	course_name varchar(50) not null,
+	credit double not null,
+	type varchar(10) not null,
+	semester varchar(10) not null,
+	primary key(course_id)
+);
+
+insert into courses (course_id, course_name, credit, type , semester) values
+	('co221','Digital Design','3','core','3'),
+	('co222','Programming Methodology','3','core','3'),
+	('co223','Computer Communication Network','3','core','3'),
+	('ee282','Newtwork Analysis','3','core','3'),
+	('em201','Mathematics III','3','core','3'),
+	('em313','Discreet Mathematics','3','core','3'),
+	('co224','Computer Architecture','3','core','4'),
+	('co225','Software Construction','3','core','4'),
+	('co226','Database Systems','3','core','4'),
+	('ee285','Electronics I','3','core','4'),
+	('em202','mathematics IV','3','core','4'),
+	('co314','Numerical Analysis','3','core','4'),
+	('ge501','Engineer in Society','3','general','shortsem1'),
+	('ge528','Digital Art ','3','general','shortsem1');
+
+create table results(
+  	username varchar(8) not null,
+  	course_id varchar(40) not null,
+  	course_name varchar(35) not null,
+	type varchar(10) not null,
+	credit double not null,
+  	semester varchar(10) not null,
+  	grade varchar(2) not null,
+  	gp double,
+  	batch varchar(4) not null,
+  	primary key (username,course_id)
+);
+
+insert into results values('e/12/058','co225','Software Construction','core','3','4','B+','3.3','e12');
+insert into results values('e/12/058','co224','Computer Architecture','core','3','4','B','3.0','e12');
+insert into results values('e/12/058','co226','Database Systems','core','3','4','A','4.0','e12');
+insert into results values('e/12/058','ee285','Electronics I','core','3','4','B','3.0','e12');
+insert into results values('e/12/410','co224','Computer Architecture','core','3','4','A-','3.7','e12');
+insert into results values('e/12/410','co225','Software Construction','core','3','4','A','4','e12');
+insert into results values('e/12/410','co226','Database Systems','core','3','4','B','3','e12');
+insert into results values('e/13/250','co226','Database Systems','core','3','4','B','3','e13');
+insert into results values('e/13/250','co225','Software Construction','core','3','4','C','2','e13');
+insert into results values('e/13/250','ee285','Electronics I','core','3','4','B+','3.0','e13');
+insert into results values('e/13/009','ee285','Electronics I','core','3','4','A+','4.0','e13');
+insert into results values('e/13/009','co225','Software Construction','core','3','4','A','4','e13');
+insert into results values('e/13/009','co226','Database Systems','core','3','4','B','4','e13')
+
+
+create table extra(
+	username varchar(40) not null,
+	year varchar(5) not null,
+	sport varchar(20) not null,
+	colors varchar(20) not null,
+	valuecolors double,
+	primary key(username,year,sport)
+);
+
+insert into extra(username,year,sport,colors,valuecolors)
+values('e/12/058','2013','volleyball','team member','0.4'),
+('e/13/050','2013','volleyball','team member','0.4'),
+('e/12/410','2013','cricket','team member','0.4'),
+('e/12/058','2013','badminton','full colors','1'),
+('e/12/410','2013','badminton','half colors','0.7'),
+('e/13/250','2014','chess','half colors','0.7'),
+('e/12/410','2015','table tennis','team member','0.4'),
+('e/12/058','2013','basket ball','team member','0.4');
+
+create table totalextra(
+	username varchar(40) not null,
+	totalvalue double,
+	primary key(username)
+);
+insert into totalextra(username,totalvalue)values('e/12/410','1.3'),
+('e/12/185','2.5'),
+('e/12/050','0.7');
+

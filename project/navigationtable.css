@@ -1,0 +1,103 @@
+ 
+body {
+  margin: 0;
+  padding-top: 30px;
+  padding-right: 30px;
+  padding-left: 30px;
+  
+}
+
+
+
+.buttin1 {
+
+  position: absolute;
+  left: 500px;
+  top: 200px;
+  width: 20px;
+  font-size: 1.1em;
+
+}
+
+.buttin3 {
+
+  position: absolute;
+  left: 500px;
+  top: 250px;
+  width: 20px;
+  font-size: 1.1em;
+
+}
+
+
+.buttin2 {
+
+  position: absolute;
+  left: 700px;
+  top: 200px;
+  width: 20px;
+
+}
+
+
+.buttin4 {
+
+ position: absolute;
+  left: 700px;
+  top: 250px;
+  width: 20px;
+  
+}
+
+
+
+.nav ul {
+  list-style: none;
+  background-color: #444;
+  text-align: center;
+  padding: 5px;
+  margin: 0;
+}
+.nav li {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.2em;
+  line-height: 40px;
+  height: 30px;
+  border-bottom: 1px solid #888;
+  padding: 5px;
+}
+ 
+.nav a {
+  text-decoration: none;
+  color: #fff;
+  display: block;
+  transition: .3s background-color;
+}
+ 
+.nav a:hover {
+  background-color: #005f5f;
+}
+ 
+.nav a.active {
+  background-color: #fff;
+  color: #444;
+  cursor: default;
+}
+ 
+@media screen and (min-width: 600px) {
+  .nav li {
+    width: 180px;
+    border-bottom: none;
+    height: 50px;
+    line-height: 30px;
+    font-size: 1.4em;
+
+  }
+ 
+  /* Option 1 - Display Inline */
+  .nav li {
+    display: inline-block;
+    margin-right: -4px;
+  }
+ 
+}

@@ -1,0 +1,29 @@
+body {
+    font-family: Arial;
+    background: url("kwallpaper.png");
+    
+}
+
+pre.code {
+    padding: 5px;
+    background-color: #eee;
+    border: 2px dashed gray;
+    margin-top: 0;
+    margin-bottom: 40px;
+    overflow-x: auto;
+}
+
+pre.code span {
+    color: green;
+}
+
+pre.code span span {
+    color: red;
+}
+
+h1 {
+
+	text-align: center;
+	padding: 30px;
+
+}
